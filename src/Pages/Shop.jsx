@@ -1,9 +1,11 @@
 import { Box, Button, Chip, Grid2, Paper, TextField, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import ProductCard from "../Components/ProductCard";
+import CartManager from "../Components/CartManager";
 import axios from "axios";
 import NoData from "../Components/NoData";
 import { error } from "ajv/dist/vocabularies/applicator/dependencies";
+
 
 export default function Shop() {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -12,7 +14,8 @@ export default function Shop() {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [quantity, setQuantity] = useState(1);
-  const [cartItems, setCartItems] = useState([]);
+
+
 
   useEffect(()=>{
     axios.get("https://dummyjson.com/products?limit=1000")
@@ -56,8 +59,10 @@ setCategories(res.data)
   const handleChange=(e)=>{
     setSearchTerm(e.target.value)
   }
-  const handleAddToCart = (thing) => {
-    console.log(thing,"dummytext")
+
+
+  const handleAddToCart = (item) => {
+    CartManager.addItem(item);
   };
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -93,7 +98,7 @@ setCategories(res.data)
               />
                 )
               })}
-              
+
             </Box>
           </Box>
         </Grid2>
@@ -118,7 +123,7 @@ setCategories(res.data)
 
                      <Button onClick={() => handleAddToCart(item)} >Add to cart</Button>
                     <ProductCard  product={item}/>
-                   
+
                   </Grid2>)
                 }):
                 <Box sx={{ flexGrow: 1, p: 3 }}>
@@ -127,7 +132,7 @@ setCategories(res.data)
                     <NoData />
                   </Grid2>
                 </Grid2>
-              </Box> 
+              </Box>
 }
               </Grid2>
             </Box>

@@ -14,10 +14,12 @@ import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import { Link } from "react-router-dom";
 import img from '../Assets/Images/logo1.png'
+
 const pages = [
   { title: "Home", path: "/" },
   { title: "About", path: "/about" },
   { title: "Shop", path: "/shop" },
+  {title:  "Cart",path:"/cart"},
 ];
 
 function NavBar() {

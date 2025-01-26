@@ -32,6 +32,7 @@ setCategories(res.data)
     .catch((error)=>{
       console.log(error)
     })
+    //Hi
 
   },[])
   useEffect(() => {

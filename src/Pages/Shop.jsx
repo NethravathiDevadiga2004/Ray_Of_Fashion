@@ -121,7 +121,7 @@ setCategories(res.data)
                   return(
                   <Grid2 size={{ xs: 12, sm: 4 }}>
 
-                     <Button onClick={() => handleAddToCart(item)}sx={{backgroundColor:"green", color:"white"}}>Add to cart</Button>
+                     <Button onClick={() => handleAddToCart(item)} >Add to cart</Button>
                     <ProductCard  product={item}/>
 
                   </Grid2>)

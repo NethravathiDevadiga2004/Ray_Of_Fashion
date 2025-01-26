@@ -10,8 +10,12 @@ import NavBar from "./Components/NavBar";
 import Footer from "./Components/Footer";
 import { Box } from "@mui/material";
 import Cart from "./Pages/Cart";
+import React, { useState } from "react";
+
 
 function App() {
+
+
   return (
     <div>
       <BrowserRouter>
@@ -21,6 +25,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/shop" element={<Shop />} />
+            <Route path="/cart" element={<Cart />} />
             <Route path="/product/:id" element={<SingleProduct />} />
             <Route path="/*" element={<Error />} />
           </Routes>

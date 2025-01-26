@@ -5,7 +5,7 @@ import axios from "axios";
 import NoData from "../Components/NoData";
 import { error } from "ajv/dist/vocabularies/applicator/dependencies";
 
-export default function Shop({handleAddToCart}) {
+export default function Shop() {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [searchTerm, setSearchTerm] = useState("");
   const [categories, setCategories] = useState([]);

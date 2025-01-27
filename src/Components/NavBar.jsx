@@ -19,6 +19,8 @@ const pages = [
   { title: "About", path: "/about" },
   { title: "Shop", path: "/shop" },
   { title: "Cart", path: "/cart" },
+  { title: "Order", path: "/order" } 
+
 ];
 
 function NavBar() {
